@@ -43,7 +43,20 @@
       <ownedFunctionPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalActivityPkg"
           id="d90bef73-b1d7-4a74-9c3c-9c395ecdea80" name="Operational Activities">
         <ownedOperationalActivities xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
-            id="3c5685ba-e740-401f-9175-e6ab0f8ed13a" name="Root Operational Activity"/>
+            id="3c5685ba-e740-401f-9175-e6ab0f8ed13a" name="Root Operational Activity">
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="48eb92b6-ab94-473f-b0dc-63ee4d806d80" name="Prendre médicament"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="8abb1724-93e8-4a33-a6b2-8a94597cd4be" name="Remplir formulaire effets secondaires"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="5abcdc9f-12d1-4d5a-afb1-9e949c1ff679" name="Analyser données retour soins"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="94dc903b-2ca6-41d3-9349-0dfa6ccec64f" name="Ecrire ordonnance"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="b53ae24e-1001-4f07-999a-360be8d0281a" name="Sélectionner médicaments"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="1229d0e2-ae99-40db-a221-82434eed901b" name="Définir dosage et périodicté"/>
+        </ownedOperationalActivities>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
           id="b7210bdd-5d86-4dd4-8279-d56f0cd09645" name="Operational Capabilities"/>
