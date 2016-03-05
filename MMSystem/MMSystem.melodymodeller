@@ -56,6 +56,12 @@
               id="b53ae24e-1001-4f07-999a-360be8d0281a" name="Sélectionner médicaments"/>
           <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
               id="1229d0e2-ae99-40db-a221-82434eed901b" name="Définir dosage et périodicté"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="0d3e5c57-4a2d-405d-80a6-4f04177e9527" name="Récuperer informations santé"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="582b20db-67fb-4bf2-840b-f5452c4f1c85" name="Fournir traitement ordonnance"/>
+          <ownedFunctions xsi:type="org.polarsys.capella.core.data.oa:OperationalActivity"
+              id="64e5a8b2-521b-49e8-8b17-94169d976681" name="Créer base de données médicament"/>
         </ownedOperationalActivities>
       </ownedFunctionPkg>
       <ownedAbstractCapabilityPkg xsi:type="org.polarsys.capella.core.data.oa:OperationalCapabilityPkg"
@@ -81,48 +87,103 @@
         <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.oa:CommunicationMean"
             id="4be859ae-ac85-4f29-ae0b-6eac78439b81" name="Retour effets médicaments"
             source="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47" target="#54eece48-50b9-4f2a-929d-cb6a48194150"/>
-        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="ed3fa6f5-2aac-4388-a80d-cd5b730cd69d"
-            name="Medecin" abstractType="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
-        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="dbb55b3d-98cb-4385-bbe4-4588ffa020e1"
-            name="Patient" abstractType="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
+        <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.oa:CommunicationMean"
+            id="416663b1-648c-4bd1-a743-e9a5449d1f56" name="Données santé" source="#cc3ea37a-0d40-4526-90d1-f4cf5ffcc880"
+            target="#54eece48-50b9-4f2a-929d-cb6a48194150"/>
+        <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.oa:CommunicationMean"
+            id="f32d7c8c-6a83-4e90-a45d-3f119659f17d" name="Données médicaments" source="#6240b16e-e844-4235-9f18-2d1a62481ad5"
+            target="#8c3521b0-730b-4f9c-b982-92ed7d1d6cab"/>
+        <ownedComponentExchanges xsi:type="org.polarsys.capella.core.data.oa:CommunicationMean"
+            id="9e309023-90dc-47a4-9640-bd13250494a4" name="Données médicaments" source="#6240b16e-e844-4235-9f18-2d1a62481ad5"
+            target="#c61db05c-a53b-4329-a420-f06768f98db2"/>
         <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="6e95b078-b99c-411c-bb87-b9d4d372ad06"
             name="Laboratoire" abstractType="#54eece48-50b9-4f2a-929d-cb6a48194150"/>
-        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="3be2a2c3-f51a-41cc-b52f-11f9faf9eed8"
-            name="Pharmacien" abstractType="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="47b9f773-787b-41b8-8be5-8d6f8786a845"
+            name="Patient entité" abstractType="#d8bee526-42cd-4b39-a67e-65386b1ced4b"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="75690b4a-dd0f-4de1-8fb8-522873aefeae"
+            name="Entity 5" abstractType="#0c46caed-7122-4c6b-b589-ed78ff95b0a5"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="0f64af25-42b1-4ee5-92c1-9b3954ee12a0"
+            name="Pharmacie" abstractType="#6832055c-1ad5-45cb-afdb-338d49a13295"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="64505c3a-660f-4cbc-862f-d23d78218184"
+            name="Ministère santé" abstractType="#6240b16e-e844-4235-9f18-2d1a62481ad5"/>
       </ownedOperationalContext>
       <ownedRolePkg xsi:type="org.polarsys.capella.core.data.oa:RolePkg" id="6b05d84c-5180-448a-b024-bfd64f9b37fc"
           name="Roles"/>
       <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="b9e9a077-7998-4887-a57f-a0b4a7d90fee"
           name="Operational Entities">
         <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
-            id="876d7013-cd39-4cf4-a34f-8dad2527d00f" name="Medecin">
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="44fba53d-556c-4424-abf2-af42e0b0e18b" targetElement="#94dc903b-2ca6-41d3-9349-0dfa6ccec64f"
-              sourceElement="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
-        </ownedEntities>
-        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
-            id="3fe9e15a-b49d-48fc-8ada-86a6644dfe47" name="Patient">
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="7ff943b3-8414-4db8-a25a-69d6681dd80d" targetElement="#48eb92b6-ab94-473f-b0dc-63ee4d806d80"
-              sourceElement="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="cfd77be1-0274-4604-b75a-29204472d984" targetElement="#8abb1724-93e8-4a33-a6b2-8a94597cd4be"
-              sourceElement="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
-        </ownedEntities>
-        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
             id="54eece48-50b9-4f2a-929d-cb6a48194150" name="Laboratoire">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
               id="7c6c84d7-5e8f-4cd4-bb67-b7c178b76646" targetElement="#5abcdc9f-12d1-4d5a-afb1-9e949c1ff679"
               sourceElement="#54eece48-50b9-4f2a-929d-cb6a48194150"/>
         </ownedEntities>
-        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
-            id="782d078b-81bd-409e-bbdb-b5b5a2a05cbf" name="Pharmacien">
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="d8bee526-42cd-4b39-a67e-65386b1ced4b"
+            name="Patient entité">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="dbb55b3d-98cb-4385-bbe4-4588ffa020e1"
+              name="Patient" abstractType="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="a9451bcd-f420-4643-b2b3-99e4decba790"
+              name="Capteur" abstractType="#cc3ea37a-0d40-4526-90d1-f4cf5ffcc880"/>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+              id="3fe9e15a-b49d-48fc-8ada-86a6644dfe47" name="Patient">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="7ff943b3-8414-4db8-a25a-69d6681dd80d" targetElement="#48eb92b6-ab94-473f-b0dc-63ee4d806d80"
+                sourceElement="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="cfd77be1-0274-4604-b75a-29204472d984" targetElement="#8abb1724-93e8-4a33-a6b2-8a94597cd4be"
+                sourceElement="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
+          </ownedEntities>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="cc3ea37a-0d40-4526-90d1-f4cf5ffcc880"
+              name="Capteur">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="469c9291-a5bf-4499-8a10-9f6788f26cdf" targetElement="#0d3e5c57-4a2d-405d-80a6-4f04177e9527"
+                sourceElement="#cc3ea37a-0d40-4526-90d1-f4cf5ffcc880"/>
+          </ownedEntities>
+          <ownedCommunicationMeans xsi:type="org.polarsys.capella.core.data.oa:CommunicationMean"
+              id="e3ef7769-0898-4896-97fe-562a0dacd287" name="Données santé" source="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"
+              target="#cc3ea37a-0d40-4526-90d1-f4cf5ffcc880"/>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="0c46caed-7122-4c6b-b589-ed78ff95b0a5"
+            name="Entity 5">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="ed3fa6f5-2aac-4388-a80d-cd5b730cd69d"
+              name="Medecin" abstractType="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="9782c798-ae7a-41f6-9708-6b883958b1ab"
+              name="Application ordonnance" abstractType="#8c3521b0-730b-4f9c-b982-92ed7d1d6cab"/>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+              id="876d7013-cd39-4cf4-a34f-8dad2527d00f" name="Medecin">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="44fba53d-556c-4424-abf2-af42e0b0e18b" targetElement="#94dc903b-2ca6-41d3-9349-0dfa6ccec64f"
+                sourceElement="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="45542b58-1bef-46de-bd03-1388f1d3ea94" targetElement="#1229d0e2-ae99-40db-a221-82434eed901b"
+                sourceElement="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
+          </ownedEntities>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="8c3521b0-730b-4f9c-b982-92ed7d1d6cab"
+              name="Application ordonnance">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="9bc67a56-f2c6-458e-a1e2-eb8f72d6229d" targetElement="#582b20db-67fb-4bf2-840b-f5452c4f1c85"
+                sourceElement="#8c3521b0-730b-4f9c-b982-92ed7d1d6cab"/>
+          </ownedEntities>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="6832055c-1ad5-45cb-afdb-338d49a13295"
+            name="Pharmacie">
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="3be2a2c3-f51a-41cc-b52f-11f9faf9eed8"
+              name="Pharmacien" abstractType="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
+          <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="a33e9fc1-9b45-4c5b-b2f8-e342efab44a8"
+              name="Application gestion médicament" abstractType="#c61db05c-a53b-4329-a420-f06768f98db2"/>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+              id="782d078b-81bd-409e-bbdb-b5b5a2a05cbf" name="Pharmacien">
+            <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
+                id="54e3d1bb-0c11-486a-9270-9bdf98e64266" targetElement="#b53ae24e-1001-4f07-999a-360be8d0281a"
+                sourceElement="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
+          </ownedEntities>
+          <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="c61db05c-a53b-4329-a420-f06768f98db2"
+              name="Application gestion médicament"/>
+        </ownedEntities>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:Entity" id="6240b16e-e844-4235-9f18-2d1a62481ad5"
+            name="Ministère santé">
           <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="45542b58-1bef-46de-bd03-1388f1d3ea94" targetElement="#1229d0e2-ae99-40db-a221-82434eed901b"
-              sourceElement="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
-          <ownedFunctionalAllocation xsi:type="org.polarsys.capella.core.data.fa:ComponentFunctionalAllocation"
-              id="54e3d1bb-0c11-486a-9270-9bdf98e64266" targetElement="#b53ae24e-1001-4f07-999a-360be8d0281a"
-              sourceElement="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
+              id="1e698b4f-e59b-4621-b02e-4030a38f5b70" targetElement="#64e5a8b2-521b-49e8-8b17-94169d976681"
+              sourceElement="#6240b16e-e844-4235-9f18-2d1a62481ad5"/>
         </ownedEntities>
       </ownedEntityPkg>
     </ownedArchitectures>
