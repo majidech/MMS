@@ -52,11 +52,29 @@
       <ownedDataPkg xsi:type="org.polarsys.capella.core.data.information:DataPkg"
           id="03ac4da7-e2e1-4db2-b0b9-9b99c4c23e9a" name="Data"/>
       <ownedOperationalContext xsi:type="org.polarsys.capella.core.data.oa:OperationalContext"
-          id="3eb60e82-cbb6-449c-89e9-d84098a587a0" name="Operational Context"/>
+          id="3eb60e82-cbb6-449c-89e9-d84098a587a0" name="Operational Context">
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="ed3fa6f5-2aac-4388-a80d-cd5b730cd69d"
+            name="Medecin" abstractType="#876d7013-cd39-4cf4-a34f-8dad2527d00f"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="dbb55b3d-98cb-4385-bbe4-4588ffa020e1"
+            name="Patient" abstractType="#3fe9e15a-b49d-48fc-8ada-86a6644dfe47"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="6e95b078-b99c-411c-bb87-b9d4d372ad06"
+            name="Laboratoire" abstractType="#54eece48-50b9-4f2a-929d-cb6a48194150"/>
+        <ownedFeatures xsi:type="org.polarsys.capella.core.data.cs:Part" id="3be2a2c3-f51a-41cc-b52f-11f9faf9eed8"
+            name="Pharmacien" abstractType="#782d078b-81bd-409e-bbdb-b5b5a2a05cbf"/>
+      </ownedOperationalContext>
       <ownedRolePkg xsi:type="org.polarsys.capella.core.data.oa:RolePkg" id="6b05d84c-5180-448a-b024-bfd64f9b37fc"
           name="Roles"/>
       <ownedEntityPkg xsi:type="org.polarsys.capella.core.data.oa:EntityPkg" id="b9e9a077-7998-4887-a57f-a0b4a7d90fee"
-          name="Operational Entities"/>
+          name="Operational Entities">
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+            id="876d7013-cd39-4cf4-a34f-8dad2527d00f" name="Medecin"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+            id="3fe9e15a-b49d-48fc-8ada-86a6644dfe47" name="Patient"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+            id="54eece48-50b9-4f2a-929d-cb6a48194150" name="Laboratoire"/>
+        <ownedEntities xsi:type="org.polarsys.capella.core.data.oa:OperationalActor"
+            id="782d078b-81bd-409e-bbdb-b5b5a2a05cbf" name="Pharmacien"/>
+      </ownedEntityPkg>
     </ownedArchitectures>
     <ownedArchitectures xsi:type="org.polarsys.capella.core.data.ctx:SystemAnalysis"
         id="3f12c7df-89eb-4992-8c98-b6141716516f" name="System Analysis">
